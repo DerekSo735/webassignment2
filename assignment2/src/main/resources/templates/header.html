@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:fragment="header">
+        <ul>
+            <li th:style="'display: inline;'">
+                <a href="#" th:href="@{/myprofile}">My Profile</a>
+            </li>
+            <li th:style="'display: inline;'">
+                <a href="#" th:href="@{/creditprofile}">Credit Profile</a>
+            </li>
+            <li th:style="'display: inline;'">
+                <a href="#" th:href="@{/inbox}">Inbox</a>
+            </li>
+            <li th:style="'display: inline;'">
+                <a href="#" th:href="@{/support}">Support</a>
+            </li>
+            <li  th:style="'display: inline;float:right;'">
+                <form  th:action="@{/logout}" method="post">
+                    <input type="submit" value="Sign Out"/>
+                </form>
+            </li>
+            <li  th:style="'display: inline; float:right;'">
+                <div  th:inline="text" >Hello [[${#httpServletRequest.remoteUser}]]! </div>
+            </li>
+
+
+
+        </ul>
+
+
+
+    </div>
+</body>
+</html>
