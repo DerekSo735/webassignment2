@@ -7,7 +7,7 @@
     <title>Title</title>
 </head>
 <body>
-    <div th:fragment="header">
+    <div th:fragment="header" th:class="topnav">
         <ul>
             <li th:style="'display: inline;'">
                 <a href="#" th:href="@{/myprofile}">My Profile</a>
@@ -26,7 +26,7 @@
                     <input type="submit" value="Sign Out"/>
                 </form>
             </li>
-            <li  th:style="'display: inline; float:right;'">
+            <li  th:style="'display: inline; float:right; color: white;'">
                 <div  th:inline="text" >Hello [[${#httpServletRequest.remoteUser}]]! </div>
             </li>
 
